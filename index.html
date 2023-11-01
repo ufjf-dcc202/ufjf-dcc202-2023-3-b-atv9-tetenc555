@@ -18,14 +18,14 @@
             tipo:"maçã",
             qtd:1,
             comeu:function(){
-                oMaria.qtd--;
+                oJoao.qtd=oJoao.qtd-1;
             }
         }
         let oMaria={
             tipo:"maçã",
             qtd:2,
             comeu:function(){
-                oJoao.qtd--;
+              oMaria.qtd=oMaria.qtd-1;
             }
         }
         function deJoaoParaMaria(){
@@ -37,6 +37,7 @@
             oMaria.qtd=0;
         }
         deJoaoParaMaria();
+        console.log("Maria roubou o João e levou todas suas maçãs!")
         console.log("Maria tinha ", oMaria.qtd, "maças, e ela possui fome.")
         oMaria.comeu();
         console.log("Maria não possui mais fome, mas agora ela possui apenas ", oMaria.qtd, " maçãs")
