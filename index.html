@@ -14,17 +14,32 @@
       </p>
     </main>
     <script>
-        let joao=1;
-        let maria=2;
+        let oJoao={
+            tipo:"maçã",
+            qtd:1,
+            comeu:function(){
+                oMaria.qtd--;
+            }
+        }
+        let oMaria={
+            tipo:"maçã",
+            qtd:2,
+            comeu:function(){
+                oJoao.qtd--;
+            }
+        }
         function deJoaoParaMaria(){
-            maria = maria+joao;
-            joao=0;
+            oMaria.qtd = oMaria.qtd+oJoao.qtd;
+            oJoao.qtd=0;
         }
         function deMariaParaJoao(){
-            joao = joao+maria;
-            maria=0;
+            oJoao.qtd = oJoao.qtd+oMaria.qtd;
+            oMaria.qtd=0;
         }
         deJoaoParaMaria();
+        console.log("Maria tinha ", oMaria.qtd, "maças, e ela possui fome.")
+        oMaria.comeu();
+        console.log("Maria não possui mais fome, mas agora ela possui apenas ", oMaria.qtd, " maçãs")
     </script>
   </body>
 </html>
